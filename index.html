@@ -1,0 +1,44 @@
+<html ng-app="newApp">
+<head>
+    <title>New Angular App</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="description" content="">
+</head>
+<body ng-controller="main as ctrl">
+
+    <header>
+    </header>
+
+    <main ng-show="ready">
+    </main>
+
+    <aside ng-hide="ready">
+    </aside>
+
+
+    <footer>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script>
+        'use strict';
+
+        var newApp = angular.module('newApp', [])
+        .controller('main', function($scope, $http){
+
+            //initial load of data
+            this.load = function reload(){
+                $scope.ready = false;
+
+                $http.get('data.json').then(function(results){
+                    $scope.ready = true;
+                });
+            };
+
+            //this.load();
+        })
+        ;
+    </script>
+    <script src="//localhost:35730/livereload.js"></script>
+</body>
+</html>
