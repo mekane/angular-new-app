@@ -10,6 +10,7 @@
     </header>
 
     <main ng-show="ready">
+        {{ message }}
     </main>
 
     <aside ng-hide="ready">
@@ -35,7 +36,10 @@
                 });
             };
 
+            $scope.message = "Hello Angular";
+
             //this.load();
+            $scope.ready = true;
         })
         ;
     </script>
