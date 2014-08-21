@@ -11,8 +11,8 @@ module.exports = function(grunt) {
     sass: {
         dist: {
           files: [{
-            src: 'scss/*.scss',
-            dest: 'css/main.css',
+            src: '*/*.scss',
+            dest: 'app/app.css',
           }]
         }
     },
@@ -22,15 +22,18 @@ module.exports = function(grunt) {
             livereload: 35730,
         },
         css: {
-            files: ['scss/*.scss'],
+            files: ['app/**/*.scss'],
             tasks: ['sass'],
             options: {
                 spawn: false,
             },
         },
         html : {
-            files: ['*.html']
-        } 
+            files: ['app/**/*.html']
+        }, 
+        scripts: {
+            files: ['app/**/*.js']
+        }
     }
 
   });

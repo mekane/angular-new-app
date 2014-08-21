@@ -1,0 +1,30 @@
+<html ng-app="newApp">
+<head>
+    <title>New Angular App</title>
+    <link rel="stylesheet" href="app.css">
+    <meta name="description" content="">
+</head>
+<body ng-controller="appController as ctrl">
+
+    <header>
+    </header>
+
+    <main ng-show="ctrl.ready">
+        {{ ctrl.message }}
+    </main>
+
+    <aside ng-hide="ctrl.ready">
+        Loading...
+    </aside>
+
+
+    <footer>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="app-controller.js"></script>
+
+    <script src="//localhost:35730/livereload.js"></script>
+</body>
+</html>
